@@ -1,0 +1,5 @@
+Django>=3.2.4,<3.3
+djangorestframework>=3.12.3,<3.13
+psycopg2>=2.8.6,<2.9
+pandas>=2.2.0,<2.3
+odfpy>=1.4.0,<1.5
