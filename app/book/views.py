@@ -16,8 +16,9 @@ class BookViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         """Filter queryset"""
-        pages = int(self.request.query_params.get('number_of_pages'))
+        pages = self.request.query_params.get('number_of_pages')
         gender = self.request.query_params.get('author_gender')
         queryset = self.queryset
-        queryset = queryset.filter(pages__gt=pages, author__gender=gender)
+        if pages and gender:
+            queryset = queryset.filter(pages__gt=int(pages), author__gender=gender)
         return queryset
